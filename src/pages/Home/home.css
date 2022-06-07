@@ -1,0 +1,135 @@
+a:hover {
+    text-decoration: none;
+}
+
+.home {
+    background-color: rgb(234, 234, 234);
+}
+p {
+    margin-bottom: 0;
+}
+
+.line-head{
+    background-color: rgb(231, 78, 78);
+    height: 2px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(234, 234, 234);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 36px;
+
+}
+
+.head-logo{
+    text-align: start;
+    font-size: large;
+    font-weight: 600;
+    width: 161px;
+}
+
+.head-item{
+    width: 80px;
+    color: black;
+    font-size: 12px;
+}
+
+.head-search-form{
+    padding-left: 23px;
+}
+
+.head-search-input{
+    width: 500px;
+    border-radius: 9px;
+    font-size: 15px;
+}
+
+.btn-head{
+    font-size: 13px;
+    border-radius: 20px;
+    border: 0px;
+    background-color: rgb(196, 223, 223);
+}
+
+.signUp {
+    background-color: rgb(67, 163, 242);
+}
+
+.head-login{
+    width: 65px;
+}
+.head-signUp{
+    width: 65px;
+}
+
+
+/* .header {
+    width: 100%;
+    margin: 0px;
+} */
+
+
+.body{
+    margin-top: 36px;
+    display: flex;
+    justify-content: center;
+}
+
+.quickAccess {
+    background-color: blueviolet;
+    height: 1000px;
+    width: 20%;
+}
+
+.listQuestion {
+    background-color: antiquewhite;
+    padding: 23px;
+    height: 1000px;
+    width: 60%;
+}
+
+.lq-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.lq-head-title{
+    font-size: x-large;
+    font-weight: 600;
+    width: 50%;
+}
+.lq-head-title-text {
+    text-align: start;
+}
+
+.lq-head-title-btn{
+    border-radius: 6px;
+    background-color: rgb(131, 160, 255);
+}
+
+.lq-head-btn{
+    text-align: end;
+    width: 50%;
+}
+
+.advertise {
+    background-color: blue;
+    height: 1000px;
+    width: 20%;
+}
+
+.lq-list {
+    margin-top: 100px;
+    margin-left: 20px;
+    display: flex;
+    text-align: start;
+}
+
+.lq-list-item-vote {
+    display: flex;
+}
