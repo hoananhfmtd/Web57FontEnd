@@ -3,7 +3,7 @@ import axios from "axios";
 import "./DetailQuestion.css";
 import { TagsInput } from "react-tag-input-component";
 
-function Question() {
+function Question({ user }) {
   const [title, setTitle] = React.useState("");
   const [description, setdescription] = React.useState("");
   const [error, setError] = React.useState("");
@@ -24,7 +24,7 @@ function Question() {
 
     try {
       const res = await axios({
-        url: "http://localhost:9000/api/questions",
+        url: "http://localhost:8080/api/questions",
         method: "POST",
         data: { title, description, tags },
       });

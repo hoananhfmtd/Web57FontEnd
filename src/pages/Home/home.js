@@ -2,7 +2,7 @@ import './home.css'
 import React from "react"
 import axios from 'axios';
 
-function Home() {
+function Home({user}) {
     // ham nay sau khi render
     const [isLoading, setIsLoading] = React.useState(true);
     const [questions, setQuestions] = React.useState([]);
@@ -65,7 +65,7 @@ function Home() {
                         <div className='lq-list-item-vote'><p>{q.answerCount}</p><p className='text-votes'>answers</p></div>
                     </div>
                     <div className='lq-list-item-body'>
-                        <div className='lq-list-item-title'><p>{q.title}</p></div>
+                        <div className='lq-list-item-title'><a href={`/question/${q._id}`}><p>{q.title}</p></a></div>
                         <div className='lq-list-item-description'><p>{q.description}</p></div>
                         <div className='lq-list-item-tags'>{renderTags(q.tags)}</div>
                     </div>
@@ -92,8 +92,18 @@ function Home() {
                 <form className='head-search-form'>
                     <input className='head-search-input' type={"search"} placeholder="   Search the question"></input>
                 </form>
-                <a href='#' className='head-login'><button className='btn-head login'>Login</button></a>
-                <a href='#' className='head-signUp'><button className='btn-head signUp'>Sign up</button></a>
+                { user ? (
+                    <button className='btn-head login' onClick={() => {
+                        localStorage.removeItem('user');
+                        window.location.href = '/login'
+                    }}>Logout</button>
+                ) : (
+                    <>
+                        <a href='/login' className='head-login'><button className='btn-head login'>Login</button></a>
+                        <a href='/signup' className='head-signUp'><button className='btn-head signUp'>Sign up</button></a>
+                    </>
+                )}
+               
             </div>
             <div className='body'>
                 <div className='quickAccess'>
@@ -139,7 +149,7 @@ function Home() {
                 <div className='listQuestion'>
                     <div className='lq-head'>
                         <div className='lq-head-title'><p className='lq-head-title-text'>All Questions</p></div>
-                        <div className='lq-head-btn'><a href='#'><button className='lq-head-title-btn'>Ask question?</button></a></div>
+                        <div className='lq-head-btn'><a href='/create-question'><button className='lq-head-title-btn'>Ask question?</button></a></div>
                     </div>
                     <div className='lq-nav'>
                         <div className='lq-nav-questionCount'>1332764837 Questions</div>

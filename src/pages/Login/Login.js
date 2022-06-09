@@ -31,7 +31,7 @@ function Login() {
 
         try {
             const res = await axios({
-                url: 'http://localhost:9000/api/auth/login',
+                url: 'http://localhost:8080/api/auth/login',
                 method: 'POST',
                 data: { username, password }
             });
@@ -44,6 +44,7 @@ function Login() {
                 }
                 setsucess("Login successful")
                 localStorage.setItem('user', JSON.stringify(user));
+                window.location.href = '/'
             } else {
                 setError(res.data.data)
             }
