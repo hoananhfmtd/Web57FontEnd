@@ -1,10 +1,13 @@
 html,
 body {
   overflow-x: hidden; /* Prevent scroll on narrow devices */
+  background-color: white !important;
+  /* background-image: none; */
 }
 
 body {
   padding-top: 56px;
+  background-image: none;
 }
 
 .bd-placeholder-img {
@@ -20,7 +23,10 @@ body {
     font-size: 3.5rem;
   }
 }
-
+.container1{
+  display: flex;
+  margin-bottom: 20px;
+}
 .b-example-divider {
   height: 3rem;
   background-color: rgba(0, 0, 0, 0.1);
@@ -100,24 +106,219 @@ body {
 }
 
 .bg-purple {
-  background-color: #c3b7da;
+
   height: 200px;
+  border-radius: 6px !important;
 }
 .text-muted{
   border-radius: 4px;
   margin-top: 10px;
-  background-color: antiquewhite !important;
+
   color: rgb(19, 22, 24) !important;
 }
 .form-control{
-  width: 800px !important;
+  width: 1050px !important;
   margin-left: 20%;
 }
+.shadow-sm{
+  box-shadow: none !important;
+}
+.lh-1{
+  height: 70%;
+  width: 110%;
+  margin:0px 20px 0px 0px;
+  background-color: #F8F9FA;
+  box-shadow: 5px 10px #b8b2b2 !important;
+  border-radius: 4px;
+}
 .tt1{
-  margin-bottom: 100px !important;
+
   color: black;
   font-size: 20px;
 }
 small{
   color: black !important;
+}
+.date{
+margin-top: 40px;
+margin-left: 40px;
+}
+
+.text-gray-dark{
+  font-size: 12px;
+  margin-top: 12px;
+  margin-left: 10px;
+  font-weight: 500;
+  width: 100px;
+}
+.answerApi{
+  background-color: #F8F9FA;
+  border-radius: 4px;
+  padding: 10px;
+  
+}
+
+.App {
+  text-align: left !important;
+}
+.d-block{
+  /* margin: 4px 0px 4px 8px; */
+  font-size: 18px;
+}
+
+.questionData{
+  font-size: 20px;
+  margin: 10px 0px 10px 14px;
+  padding: 0px;
+  color: #177bdf;
+
+}
+.inputCre{
+  margin-left: 16px !important;
+  width: 85% !important;
+}
+.textQuestion{
+  font-size: 24px !important;
+  margin-right: 4px;
+  color: #000000;
+}
+
+.btn-outline-secondary{
+  color: #343a40;
+  font-weight: bold;
+}
+.titelQuestion{
+  font-size: 24px !important;
+  margin-right: 4px;
+  color: #000000;
+
+}
+
+.titleSmall h3 {
+  height: 40px;
+  position:relative;
+  text-transform: capitalize;
+}
+.titleSmall h3:before {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 70px;
+  height: 2px;
+  content: "";
+  background-color: #c50000;
+}
+ 
+.titleSmall h3 span {
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  line-height: 3em;
+  padding-left: 0.25em;
+  color: rgba(0, 0, 0, 0.4);
+  padding-bottom: 0px;
+}
+
+.titelTQues{
+  margin: 50px;
+  padding: 10px;
+  font-size: 20px !important;
+  font-weight: 500;
+}
+.containerExtra{
+  display: inline-block;
+  height:100vh;
+  width: 220px;
+  border-right: 1px solid  rgb(190, 177, 167) !important;
+}
+.mid{
+  display: inline-block;
+  margin-left: 5% !important;
+}
+.btn-light{
+  margin-top: 40px;
+  margin-left: 33px;
+  height: 50px;
+  width: 150px;
+}
+.btn-primary{
+  margin-top: 40px;
+  margin-left: 33px;
+  height: 50px;
+  width: 150px;
+}
+.mt-3, .my-3{
+  margin-top: 0px !important;
+}
+
+/* footer */
+/* Footer */
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+section {
+    padding: 60px 0;
+}
+
+section .section-title {
+    text-align: center;
+    color: #007b5e;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+#footer {
+    background: #007b5e !important;
+}
+#footer h5{
+  padding-left: 10px;
+    border-left: 3px solid #eeeeee;
+    padding-bottom: 6px;
+    margin-bottom: 20px;
+    color:#ffffff;
+}
+#footer a {
+    color: #ffffff;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+#footer ul.social li{
+  padding: 3px 0;
+}
+#footer ul.social li a i {
+    margin-right: 5px;
+  font-size:25px;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.social li:hover a i {
+  font-size:30px;
+  margin-top:-10px;
+}
+#footer ul.social li a,
+#footer ul.quick-links li a{
+  color:#ffffff;
+}
+#footer ul.social li a:hover{
+  color:#eeeeee;
+}
+#footer ul.quick-links li{
+  padding: 3px 0;
+  -webkit-transition: .5s all ease;
+  -moz-transition: .5s all ease;
+  transition: .5s all ease;
+}
+#footer ul.quick-links li:hover{
+  padding: 3px 0;
+  margin-left:5px;
+  font-weight:700;
+}
+.container3{
+  display: inline-block;
+  width: 400px;
+  height: 100vh;
+}
+.w-100 {
+  width: 80%!important;
+  border: 2px outset #e7dfe2;
 }
