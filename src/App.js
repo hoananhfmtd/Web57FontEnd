@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom'
 import './App.css';
 import Login from './pages/Login/Login';
 import Register from './pages/SignUp/Register';
-import Question from './pages/DetailQuestion/DetailQuestion';
 import CreateQuestion from './pages/CreateQuestion/CreateQuestion';
 
 import Home from './pages/Home/home'
