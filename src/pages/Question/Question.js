@@ -8,7 +8,7 @@ function Question() {
       <>
         <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" aria-label="Main navigation">
           <div className="container-fluid">
-            <a className="navbar-brand" href="#">Question & Anwser</a>
+            <a className="navbar-brand" href="#">Question and Anwser</a>
             <button className="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation" onClick={()=>{navbarHandle()}}>
               <span className="navbar-toggler-icon"></span>
             </button>
