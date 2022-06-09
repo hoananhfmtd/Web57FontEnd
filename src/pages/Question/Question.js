@@ -3,7 +3,7 @@ import React from 'react'
 import axios, { Axios } from 'axios'
 import { useParams } from 'react-router-dom'
 
-function Question() {
+function Question({ user }) {
 	const navbarHandle = () =>
 		document.querySelector('.offcanvas-collapse').classList.toggle('open')
 	let [answer, setAnswer] = React.useState(),
@@ -50,6 +50,7 @@ function Question() {
 				`http://localhost:8080/api/answers?questionId=${questionId}`,
 				{
 					description,
+					
 				}
 			)
 			.then((res) => {

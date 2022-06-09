@@ -32,7 +32,7 @@ function Register() {
     } else {
       try {
         const res = await axios({
-          url: "http://localhost:9000/api/auth/signup",
+          url: "http://localhost:8080/api/auth/signup",
           method: "POST",
           data: { username, password },
         });
