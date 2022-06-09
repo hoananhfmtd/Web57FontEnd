@@ -26,7 +26,7 @@ function Login() {
         e.preventDefault();
       
        
-                   
+                
        
 
         try {
@@ -35,6 +35,7 @@ function Login() {
                 method: 'POST',
                 data: { username, password }
             });
+           
             if (res.data.success) {
                 const user = {
                     username: res.data.data.username,
@@ -79,13 +80,13 @@ function Login() {
                         {error ? <div style={{color:"red",textAlign:'left' }} >{error}</div> : null}
                         {sucess ? <div style={{color:"green",textAlign:'left' }} >{sucess}</div> : null}
                         <div className="form-group">
-                            <Button label="Login" />
+                            <a href='/signup'> <Button label="/Login"  /></a>
                         </div>
                     </form>
                 </div>
                 <div className="card-footer">
                     <div className="d-flex justify-content-center links">
-                        Don't have an account?<a href="#">Sign Up</a>
+                        Don't have an account?<a href="/signup">Sign Up</a>
                     </div>
                     <div className="d-flex justify-content-center">
                         <a href="#">Forgot your password?</a>
