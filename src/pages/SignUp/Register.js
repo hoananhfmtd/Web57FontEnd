@@ -1,111 +1,130 @@
 import "./Register.css";
 import React from "react";
-
+import Button from "../../components/Button/Button";
+import axios from "axios";
 function Register() {
+  const [username, setUsername] = React.useState("");
+  const [password, setpassword] = React.useState("");
+  const [confirmpassword, setconfirmpassword] = React.useState("");
+  const [error, setError] = React.useState("");
+  const [success, setsuccess] = React.useState("");
+  const onChangeUsername = (e) => {
+    const value = e.target.value;
+    setUsername(value);
+  };
+  const onChangePassword = (e) => {
+    const value = e.target.value;
+    setpassword(value);
+  };
+  const onChangeConfirmPassword = (e) => {
+    const value = e.target.value;
+    setconfirmpassword(value);
+  };
+  const submitForm = async (e) => {
+    setError("");
+    setsuccess("");
+    e.preventDefault();
+    console.log(username);
+    console.log(password);
+    console.log(confirmpassword);
+    if (password !== confirmpassword) {
+      setError("Check password or confirmpassword");
+    } else {
+      try {
+        const res = await axios({
+          url: "http://localhost:9000/api/auth/signup",
+          method: "POST",
+          data: { username, password },
+        });
+        if (res.data.success) {
+          setsuccess("sign up success")
+          const user = {
+            username: res.data.data.username,
+            _id: res.data.data._id,
+          };
+          localStorage.setItem("user", JSON.stringify(user));
+        } else {
+          setError(res.data.data);
+        }
+      } catch (err) {
+        console.log(err);
+        setError("loi roi");
+      }
+    }
+  };
+
   return (
-    <section className="vh-100" style={{ backgroundColor: '#eee'}}>
-      <div className="container h-100">
-        <div className="row d-flex justify-content-center align-items-center h-100">
-          <div className="col-lg-12 col-xl-11">
-            <div className="card text-black" style={{borderRadius: "25px"}}>
-              <div className="card-body p-md-5">
-                <div className="row justify-content-center">
-                  <div className="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                    <p className="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                      Sign up
-                    </p>
-
-                    <form className="mx-1 mx-md-4">
-                      <div className="d-flex flex-row align-items-center mb-4">
-                        <i className="fas fa-user fa-lg me-3 fa-fw"></i>
-                        <div className="form-outline flex-fill mb-0">
-                          <input
-                            type="text"
-                            id="form3Example1c"
-                            className="form-control"
-                          />
-                          <label className="form-label" htmlFor="form3Example1c">
-                            Your Name
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="d-flex flex-row align-items-center mb-4">
-                        <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                        <div className="form-outline flex-fill mb-0">
-                          <input
-                            type="email"
-                            id="form3Example3c"
-                            className="form-control"
-                          />
-                          <label className="form-label" htmlFor="form3Example3c">
-                            Your Email
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="d-flex flex-row align-items-center mb-4">
-                        <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
-                        <div className="form-outline flex-fill mb-0">
-                          <input
-                            type="password"
-                            id="form3Example4c"
-                            className="form-control"
-                          />
-                          <label className="form-label" htmlFor="form3Example4c">
-                            Password
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="d-flex flex-row align-items-center mb-4">
-                        <i className="fas fa-key fa-lg me-3 fa-fw"></i>
-                        <div className="form-outline flex-fill mb-0">
-                          <input
-                            type="password"
-                            id="form3Example4cd"
-                            className="form-control"
-                          />
-                          <label className="form-label" htmlFor="form3Example4cd">
-                            Repeat your password
-                          </label>
-                        </div>
-                      </div>
-
-                      <div className="form-check d-flex justify-content-center mb-5">
-                        <input
-                          className="form-check-input me-2"
-                          type="checkbox"
-                          value=""
-                          id="form2Example3c"
-                        />
-                        <label className="form-check-label" htmlFor="form2Example3">
-                          I agree all statements in{" "}
-                          <a href="#!">Terms of service</a>
-                        </label>
-                      </div>
-
-                      <div className="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                        <button type="button" className="btn btn-primary btn-lg">
-                          Register
-                        </button>
-                      </div>
-                    </form>
-                  </div>
-                  <div className="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                    <img
-                      src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
-                      className="img-fluid"
-                      alt="Sample image"
-                    ></img>
-                  </div>
+    <div className="container">
+      <div className="d-flex justify-content-center h-100">
+        <div className="card">
+          <div className="card-header">
+            <h3>Sign In</h3>
+          </div>
+          <div className="card-body">
+            <form onSubmit={submitForm}>
+              <div className="input-group form-group">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    <i className="fas fa-user"></i>
+                  </span>
                 </div>
+                <input
+                  type="text"
+                  value={username}
+                  onChange={onChangeUsername}
+                  className="form-control"
+                  placeholder="username"
+                  required
+                ></input>
               </div>
+              <div className="input-group form-group">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    <i className="fas fa-key"></i>
+                  </span>
+                </div>
+                <input
+                type="password"
+                  className="form-control"
+                  value={password}
+                  onChange={onChangePassword}
+                  placeholder="password"
+                  required
+                ></input>
+              </div>
+              <div className="input-group form-group">
+                <div className="input-group-prepend">
+                  <span className="input-group-text">
+                    <i className="fas fa-key"></i>
+                  </span>
+                </div>
+                <input
+                type="password"
+                  className="form-control"
+                  value={confirmpassword}
+                  onChange={onChangeConfirmPassword}
+                  placeholder="confirm password"
+                  required
+                ></input>
+              </div>
+              {error ? <div style={{color:"red",textAlign:'left' }} >{error}</div> : null}
+              {success ? <div style={{color:"green",textAlign:'left' }} >{success}</div> : null}
+              <div className="form-group">
+                <Button label="Signup" />
+              </div>
+            </form>
+          </div>
+          <div className="card-footer">
+            <div className="d-flex justify-content-center links">
+              You have an account?<a href="#">Sign in</a>
+            </div>
+            <div className="d-flex justify-content-center">
+              <a href="#">Forgot your password?</a>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
 export default Register;
