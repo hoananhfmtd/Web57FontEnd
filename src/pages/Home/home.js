@@ -131,8 +131,8 @@ function Home() {
                             </ol>
                         </li>
                         <li>
-                            <img className='ad-img qa-img qa-img-1' src='https://cf.shopee.vn/file/29e31959305c132c92402cd9fdbe7dac'></img>
-                            <img className='ad-img qa-img' src='https://3ss.vn/admin/sites/default/files/superadmin/2021_08_19/ok-1-1622453554.jpg'></img>
+                            {/* <img className='ad-img qa-img qa-img-1' src='https://cf.shopee.vn/file/29e31959305c132c92402cd9fdbe7dac'></img> */}
+                            {/* <img className='ad-img qa-img' src='https://3ss.vn/admin/sites/default/files/superadmin/2021_08_19/ok-1-1622453554.jpg'></img> */}
                         </li>
                     </ol>
                 </div>
@@ -163,9 +163,9 @@ function Home() {
                     </div>
                 </div>
                 <div className='advertise'>
-                    <img className='ad-img adImg1' src='https://caia.vn/wp-content/uploads/2011/03/quang-cao-truyen-hinh.jpg'></img>
-                    <img className='ad-img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjXcsbOnf7p1dNJpuL7aykwGbZNe3__pA-joOwk5qG3L15gxe8vvuuMLYlgHk76uOaUk&usqp=CAU'></img>
-                    <img className='ad-img' src='https://vinaad.vn/wp-content/uploads/2018/07/ap-phich-quang-cao-6-e1531123223501.jpg'></img>
+                    {/* <img className='ad-img adImg1' src='https://caia.vn/wp-content/uploads/2011/03/quang-cao-truyen-hinh.jpg'></img> */}
+                    {/* <img className='ad-img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjXcsbOnf7p1dNJpuL7aykwGbZNe3__pA-joOwk5qG3L15gxe8vvuuMLYlgHk76uOaUk&usqp=CAU'></img> */}
+                    {/* <img className='ad-img' src='https://vinaad.vn/wp-content/uploads/2018/07/ap-phich-quang-cao-6-e1531123223501.jpg'></img> */}
                 </div>
             </div>
         </div>
