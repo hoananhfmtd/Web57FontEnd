@@ -119,6 +119,7 @@ body {
 .form-control{
   width: 1050px !important;
   margin-left: 20%;
+  border: 2px solid #177bdf !important;
 }
 .shadow-sm{
   box-shadow: none !important;
@@ -321,4 +322,21 @@ section .section-title {
 .w-100 {
   width: 80%!important;
   border: 2px outset #e7dfe2;
+}
+
+.returnSeach{
+  position: fixed;
+  /* top: 0; */
+  margin: 0px 32.5% 0px 23.5%;
+
+  height: 50px;
+  width: 44%;
+  background-color: #d4a5b6;
+}
+.bgdark{
+  background-color: #e7dfe2 !important;
+}
+.navbar-brand{
+  color: #177bdf !important;
+  font-weight: 600;
 }

@@ -4,6 +4,7 @@ import axios, { Axios } from 'axios'
 import { useParams } from 'react-router-dom'
 
 function Question({ user }) {
+	
 	const navbarHandle = () =>
 		document.querySelector('.offcanvas-collapse').classList.toggle('open')
 	let [answer, setAnswer] = React.useState(),
@@ -41,7 +42,7 @@ function Question({ user }) {
 		}
 		getData()
 	}, [])
-	console.log(answer)
+
 
 	const postDate = async (e) => {
 		e.preventDefault()
@@ -50,6 +51,7 @@ function Question({ user }) {
 				`http://localhost:8080/api/answers?questionId=${questionId}`,
 				{
 					description,
+					userId:user.username
 					
 				}
 			)
@@ -59,19 +61,32 @@ function Question({ user }) {
 						`http://localhost:8080/api/answers?questionId=${questionId}`
 					)
 					setAnswer(NewDataAnswer.data.data)
-					console.log('aksjssj')
+					console.log(answer)
+					console.log(user.username);
 				}
 				getData()
 			})
 			.catch((err) => console.log(err))
 	}
-
+	React.useEffect(() => {
+		const getData = async () => {
+			let dataAnswer = await axios.get(
+				`http://localhost:8080/api/answers?questionId=${questionId}`
+			)
+			setAnswer(dataAnswer.data.data)
+			console.log(dataAnswer.data.data)
+			console.log('aksjssj')
+		}
+		getData()
+	}, [keyword])
 	return (
 		<>
+	
 			<nav
-				className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark"
+				className="navbar navbar-expand-lg fixed-top navbar-dark bgdark"
 				aria-label="Main navigation"
 			>
+				
 				<div className="container-fluid">
 					<a className="navbar-brand" href="#">
 						Question & Anwser
@@ -111,15 +126,16 @@ function Question({ user }) {
 						</form>
 					</div>
 				</div>
+				
 			</nav>
 			<div className="container1">
 				<div className="containerExtra">
-					<button type="button" className="btn btn-light">
+					<a href='../'><button type="button" className="btn btn-light">
 						Home
-					</button>
-					<button type="button" className="btn btn-primary">
+					</button></a>
+					<a href='../create-question'><button type="button" className="btn btn-primary">
 						Ask Question
-					</button>
+					</button></a>
 					{/* <button type="button" className="btn btn-primary">
 						About Us
 					</button> */}
@@ -156,10 +172,12 @@ function Question({ user }) {
 						{answer &&
 							answer.map((item) => {
 								if (
-									item.description != undefined
-									// .toLowerCase()
-									// .includes(keyword.toLowerCase().trim())
-								)
+									
+									(item.description.toLowerCase()
+									.includes(keyword.toLowerCase().trim()))
+									// item.description != undefined
+								) 
+							
 									return (
 										<div className="my-3  bg-body rounded shadow-sm">
 											<div className="d-flex text-muted pt-3">
@@ -178,7 +196,7 @@ function Question({ user }) {
 													/>
 												</svg>
 												<strong className="text-gray-dark">
-													Full Name
+													{item.userId}
 												</strong>
 												<div className=" mb-0 answerApi small lh-sm border-bottom w-100">
 													<div className="d-flex justify-content-between"></div>
@@ -196,7 +214,7 @@ function Question({ user }) {
 											</div>
 										</div>
 									)
-							})}
+									})}
 						<div className="input-group mb-3">
 							<div className="input-group-prepend">
 								<button
