@@ -26,7 +26,8 @@ p {
     top: 0;
     width: 100%;
     height: 55px;
-
+    border-top-style: solid;
+    border-color: #f7a818;
 }
 
 .head-logo{
@@ -36,6 +37,9 @@ p {
     width: 161px;
 }
 
+.head-item-first{
+    margin-left: 22px;
+}
 .head-item{
     width: 80px;
     color: black;
@@ -65,6 +69,7 @@ p {
 
 .head-login{
     width: 65px;
+    margin-left: 22px;
 }
 .head-signUp{
     width: 65px;
@@ -108,7 +113,7 @@ p {
 .body{
     margin-top: -20px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 
@@ -117,8 +122,6 @@ p {
     padding: 23px;
     height: 1000px;
     width: 60%;
-    border-left-style: solid;
-    border-width: 1px;
 }
 
 .lq-head{
@@ -136,8 +139,9 @@ p {
 }
 
 .lq-head-title-btn{
-    border-radius: 6px;
-    background-color: rgb(131, 160, 255);
+    border-radius: 3px;
+    background-color: rgb(144 214 255);
+    border: 0px;
 }
 
 .lq-head-btn{
@@ -149,6 +153,32 @@ p {
     background-color: #f9f9f9;
     height: 1000px;
     width: 20%;
+}
+.related-tags{
+    margin-top: 26px;
+    border-style: solid;
+    border-width: 2px;
+    border-radius: 8px;
+    border-color: #5a8db1;
+    padding: 5px 0px 5px 10px;
+}
+.rt-title{
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+.rt-list{
+    font-size: 13px;
+}
+.rt-list-item{
+    display: flex;
+    padding-top: 13px;
+}
+.rt-list-item-tag{
+    border-radius: 4px;
+    margin-right: 10px;
+    border: 0;
+    background-color: rgb(210 221 243);
+    color: #2e4d6d;
 }
 
 .lq-list {
@@ -199,6 +229,8 @@ p {
     height: 1000px;
     width: 20%;
     padding: 34px 0px 0px 47px;
+    border-right-style: solid;
+    border-width: 1px;
 }
 .qa-text{
     color:black;
@@ -210,8 +242,8 @@ p {
 .qa-home{
     font-size: 15px;
     text-align: start;
-    margin-bottom: 30px;
-    padding-left: 25px;
+    margin-bottom: 25px;
+    font-weight: 600;
 }
 .qa-public{
     text-align: start;
@@ -239,6 +271,45 @@ p {
     border-color: #f58553;
     border-width: 3px;
 }
+.qa-team-title{
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 15px;
+}
+.qa-team-dep{
+    font-size: 11px;
+    border-style: solid;
+    border-right-style: none;
+    border-radius: 3px;
+    padding: 10px 3px 8px 6px;
+    border-width: thin;
+}
+.qa-item1-text-title{
+    font-weight: 600;
+}
+.qa-iteam2-img{
+    width: 112px;
+    height: 109px;
+}
+.qa-team-dep-item2{
+    display: flex;
+    justify-content: center;
+}
+.qa-item3-ab1{
+    display: flex;
+    justify-content: center;
+}
+.qa-item3-ab2{
+    display: flex;
+    justify-content: center;
+}
+.qa-item3-btn{
+    background-color: #f9840c;
+    border-width: 0.1px;
+    color: white;
+}
+
+
 .ad-img{
     border-radius: 7px;
     width: 205px;
@@ -253,4 +324,58 @@ p {
 }
 .qa-img1{
     margin-top: 20px;
+}
+
+/* footer ------------------------------------------ */
+
+.footer{
+    display: flex;
+    justify-content: center;
+    background-color: #181b1b;
+    color: #838687;
+    padding-top: 30px;
+    padding-bottom: 72px;
+}
+.ft-item1{
+    width: 15%;
+}
+.ft-item2{
+    width: 15%;
+}
+.ft-item3{
+    width: 15%;
+}
+.ft-item4{
+    width: 15%;
+}
+.ft-item5{
+    width: 30%;
+    padding-left: 50px;
+}
+.ft-text-title{
+    font-weight: 1000;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+.ft-text-dep{
+    font-size: 10px;
+    margin-top: 4px;
+}
+.ft-item5-up{
+    display: flex;
+    padding-top: 10px;
+}
+.ft-item5-tag{
+    padding-right: 5px;
+}
+.ft-item5-down-dep{
+    font-size: 9px;
+}
+.ft-item5-down{
+    margin-top: 145px;
+}
+.ft-logo{
+    color: rgb(79, 96, 225);
+    font-size: 14px;
+    margin-bottom: 15px;
 }

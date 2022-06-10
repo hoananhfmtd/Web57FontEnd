@@ -1,6 +1,7 @@
 import './home.css'
 import React from "react"
-import axios from 'axios';
+import axios from 'axios'
+import bannerTeam from '../Home/bannerTeam.PNG'
 
 function Home({user}) {
     // ham nay sau khi render
@@ -86,7 +87,7 @@ function Home({user}) {
         <div className='home'>
             <div className='header'>
                 <a href='#' className='head-logo'><p>MindX Questions</p></a>
-                <a href='#' className='head-item'><p>About us</p></a>
+                <a href='#' className='head-item head-item-first'><p>About us</p></a>
                 <a href='#' className='head-item'><p>Products</p></a>
                 <a href='#' className='head-item'><p>For Teams</p></a>
                 <form className='head-search-form'>
@@ -141,8 +142,28 @@ function Home({user}) {
                             </ol>
                         </li>
                         <li>
-                            {/* <img className='ad-img qa-img qa-img-1' src='https://cf.shopee.vn/file/29e31959305c132c92402cd9fdbe7dac'></img> */}
-                            {/* <img className='ad-img qa-img' src='https://3ss.vn/admin/sites/default/files/superadmin/2021_08_19/ok-1-1622453554.jpg'></img> */}
+                           <div className='qa-team'>
+                               <div className='qa-team-title'>
+                                   <div>Teams</div>
+                               </div>
+                               <div className='qa-team-dep'>
+                                    <div className='qa-team-dep-item1'>
+                                        <div className='qa-item1-text-title'>MindX Question Teams</div>
+                                        <div className='qa-item1-text-dep'> - Start collaborating and sharing organizational knowledge.</div>
+                                    </div>
+                                    <div className='qa-team-dep-item2'>
+                                        <img className='qa-iteam2-img' src={bannerTeam}></img>
+                                    </div>
+                                    <div className='qa-team-dep-item3'>
+                                        <div className='qa-item3-ab1'>
+                                            <button className='qa-item3-btn'>Create a free Team</button>
+                                        </div>
+                                        <div className='qa-item3-ab2'>
+                                            <p className='qa-item3-tex'>Why Teams?</p>
+                                        </div>
+                                    </div>
+                               </div>
+                           </div>
                         </li>
                     </ol>
                 </div>
@@ -172,12 +193,134 @@ function Home({user}) {
                         {renderQuestions()}
                     </div>
                 </div>
+
                 <div className='advertise'>
                     {/* <img className='ad-img adImg1' src='https://caia.vn/wp-content/uploads/2011/03/quang-cao-truyen-hinh.jpg'></img> */}
                     {/* <img className='ad-img' src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNjXcsbOnf7p1dNJpuL7aykwGbZNe3__pA-joOwk5qG3L15gxe8vvuuMLYlgHk76uOaUk&usqp=CAU'></img> */}
                     {/* <img className='ad-img' src='https://vinaad.vn/wp-content/uploads/2018/07/ap-phich-quang-cao-6-e1531123223501.jpg'></img> */}
+                    <div className='related-tags'>
+                        <div className='rt-title'>
+                            Related Tags
+                        </div>
+                        <div className='rt-list'>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>javascript</button>
+                                <p className='rt-list-item-vl'>x 24064</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>reactJs</button>
+                                <p className='rt-list-item-vl'>x 23763</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>python</button>
+                                <p className='rt-list-item-vl'>x 19344</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>php</button>
+                                <p className='rt-list-item-vl'>x 14864</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>sql</button>
+                                <p className='rt-list-item-vl'>x 13954</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>mongodb</button>
+                                <p className='rt-list-item-vl'>x 11843</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>database</button>
+                                <p className='rt-list-item-vl'>x 10384</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>flask</button>
+                                <p className='rt-list-item-vl'>x 8432</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>ruby</button>
+                                <p className='rt-list-item-vl'>x 5384</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>facebook</button>
+                                <p className='rt-list-item-vl'>x 5163</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>google</button>
+                                <p className='rt-list-item-vl'>x 5023</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>postgres</button>
+                                <p className='rt-list-item-vl'>x 4936</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>ddos</button>
+                                <p className='rt-list-item-vl'>x 4773</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>AI</button>
+                                <p className='rt-list-item-vl'>x 2543</p>
+                            </div>
+                            <div className='rt-list-item'>
+                                <button className='rt-list-item-tag'>vsCode</button>
+                                <p className='rt-list-item-vl'>x 1834</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
+
+            <footer className='footer'>
+                <div className='ft-item1'>
+                    <div className='ft-logo'>MINDX QUESTIONS</div>
+                    <div className='ft-text-dep'>Questions</div>
+                    <div className='ft-text-dep'>Help</div>
+                </div>
+                <div className='ft-item2'>
+                    <div className='ft-text-title'>PRODUCTS</div>
+                    <div className='ft-text-dep'>Teams</div>
+                    <div className='ft-text-dep'>Advertising</div>
+                    <div className='ft-text-dep'>Collectives</div>
+                    <div className='ft-text-dep'>Talent</div>
+                </div>
+                <div className='ft-item3'>
+                    <div className='ft-text-title'>COMPANY</div>
+                    <div className='ft-text-dep'>About</div>
+                    <div className='ft-text-dep'>Press</div>
+                    <div className='ft-text-dep'>Work Here</div>
+                    <div className='ft-text-dep'>Legal</div>
+                    <div className='ft-text-dep'>Privacy Policy</div>
+                    <div className='ft-text-dep'>Terms of Service</div>
+                    <div className='ft-text-dep'>Contact Us</div>
+                    <div className='ft-text-dep'>Cookie Settings</div>
+                    <div className='ft-text-dep'>Cookie Policy</div>
+                </div>
+                <div className='ft-item4'>
+                    <div className='ft-text-title'>STACK EXCHANGE NETWORK</div>
+                    <div className='ft-text-dep'>Technology</div>
+                    <div className='ft-text-dep'>Culture & recreation</div>
+                    <div className='ft-text-dep'>Life & arts</div>
+                    <div className='ft-text-dep'>Science</div>
+                    <div className='ft-text-dep'>Professional</div>
+                    <div className='ft-text-dep'>Business</div>
+                    <div className='ft-text-dep'>API</div>
+                    <div className='ft-text-dep'>Data</div>
+                </div>
+                <div className='ft-item5'>
+                    <div className='ft-item5-up'>
+                        <div className='ft-text-dep ft-item5-tag'>Blog</div>
+                        <div className='ft-text-dep ft-item5-tag'>Facebook</div>
+                        <div className='ft-text-dep ft-item5-tag'>Twitter</div>
+                        <div className='ft-text-dep ft-item5-tag'>LinkedIn</div>
+                        <div className='ft-text-dep ft-item5-tag'>Instagram</div>
+                    </div>
+                    <div className='ft-item5-down'>
+                        <div className='ft-item5-down-dep'>
+                        Site design / logo © 2022 Stack Exchange Inc; user<br></br> contributions
+                         licensed under cc by-sa. rev 2022.6.8.42312
+                        </div>
+                    </div>
+                </div>
+            </footer>
         </div>
     )
 }
