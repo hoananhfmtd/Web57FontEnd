@@ -12,7 +12,7 @@ function Home({user}) {
 
         try {
             const res = await axios({
-                url: 'http://localhost:8080/api/questions',
+                url: 'http://localhost:9000/api/questions',
                 method: 'GET'
             })
             setIsLoading(false);
